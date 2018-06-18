@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -23,6 +24,10 @@ namespace m1501.Tests
                 Assert.Equal(4, catalog.Books.Count(b => b.Genre == "Computer"));
 
                 Assert.Contains(catalog.Books, b => b.Author == "Löwy, Juval");
+
+                Assert.IsType<DateTime>(catalog.Books[0].PublishDate);
+
+                Assert.IsType<DateTime>(catalog.Books[0].RegistrationDate);
             }
         }
     }

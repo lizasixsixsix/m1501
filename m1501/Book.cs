@@ -25,14 +25,12 @@ namespace m1501
         public string Publisher { get; set; }
 
         [XmlElement("publish_date")]
-        public string PublishDate { get; set; }
-        // public DateTime PublishDate { get; set; }
+        public DateTime PublishDate { get; set; }
 
         [XmlElement("description")]
         public string Description { get; set; }
 
         [XmlElement("registration_date")]
-        public string RegistrationDate { get; set; }
-        // public DateTime RegistrationDate { get; set; }
+        public DateTime RegistrationDate { get; set; }
     }
 }
