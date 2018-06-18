@@ -11,7 +11,7 @@ namespace m1501.Tests
         [Fact]
         public void DeserializationTest()
         {
-            var ns = "http://library.by/catalog";
+            const string ns = "http://library.by/catalog";
 
             var serializer = new XmlSerializer(typeof(Catalog), ns);
 
@@ -21,7 +21,7 @@ namespace m1501.Tests
 
                 Assert.Equal(12, catalog.Books.Count);
 
-                Assert.Equal(4, catalog.Books.Count(b => b.Genre == Genre.Computer));
+                Assert.Equal(1, catalog.Books.Count(b => b.Genre == Genre.ScienceFiction));
 
                 Assert.Contains(catalog.Books, b => b.Author == "Löwy, Juval");
 
@@ -29,7 +29,10 @@ namespace m1501.Tests
 
                 Assert.IsType<DateTime>(catalog.Books[0].RegistrationDate);
 
-                Assert.Equal("bk101", catalog.Books.SingleOrDefault(b => b.Title == "COM and .NET Component Services")?.Id);
+                Assert.Equal(
+                    "bk101",
+                    catalog.Books
+                        .SingleOrDefault(b => b.Title == "COM and .NET Component Services")?.Id);
             }
         }
     }
