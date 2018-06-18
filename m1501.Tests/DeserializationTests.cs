@@ -21,7 +21,7 @@ namespace m1501.Tests
 
                 Assert.Equal(12, catalog.Books.Count);
 
-                Assert.Equal(4, catalog.Books.Count(b => b.Genre == "Computer"));
+                Assert.Equal(4, catalog.Books.Count(b => b.Genre == Genre.Computer));
 
                 Assert.Contains(catalog.Books, b => b.Author == "Löwy, Juval");
 

@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace m1501
 {
-    [Serializable, XmlRoot("book")]
+    [XmlRoot("book")]
     public class Book
     {
         // public string Id { get; set; }
@@ -18,8 +18,7 @@ namespace m1501
         public string Title { get; set; }
 
         [XmlElement("genre")]
-        public string Genre { get; set; }
-        // public Genre Genre { get; set; }
+        public Genre Genre { get; set; }
 
         [XmlElement("publisher")]
         public string Publisher { get; set; }

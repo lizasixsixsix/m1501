@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 namespace m1501
 {
-    [Serializable, XmlRoot("catalog")]
+    [XmlRoot("catalog")]
     public class Catalog
     {
         [XmlElement("book")]
