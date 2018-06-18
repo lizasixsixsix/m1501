@@ -28,6 +28,8 @@ namespace m1501.Tests
                 Assert.IsType<DateTime>(catalog.Books[0].PublishDate);
 
                 Assert.IsType<DateTime>(catalog.Books[0].RegistrationDate);
+
+                Assert.Equal("bk101", catalog.Books.SingleOrDefault(b => b.Title == "COM and .NET Component Services")?.Id);
             }
         }
     }

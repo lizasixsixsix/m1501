@@ -6,7 +6,8 @@ namespace m1501
     [XmlRoot("book")]
     public class Book
     {
-        // public string Id { get; set; }
+        [XmlAttribute("id")]
+        public string Id { get; set; }
 
         [XmlElement("isbn")]
         public string Isbn { get; set; }
